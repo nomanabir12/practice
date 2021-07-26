@@ -95,22 +95,247 @@
 // console.log(number, (typeof number));
 
 // Function
-let name = 'abir';
-let name2 = 'mahmud'
-console.log(`Welcome to our website ${name}`);
-console.log(`Welcome to our website ${name2}`);
+//  let name = 'abir';
+//  let name2 = 'mahmud'
+//  console.log(`Welcome to our website ${name}`);
+// console.log(`Welcome to our website ${name2}`);
 
-let userName = 'abir';
+// let userName = 'abir';
 
-function showMessage() {
-  userName = "abir"; 
+// function showMessage() {
+//   userName = "abir"; 
 
-  let message = 'Hello, ' + userName;
-  alert(message);
-}
+//   let message = 'Hello, ' + userName;
+//   alert(message);
+// }
 
-alert( userName ); 
+// alert( userName ); 
 
-showMessage();
+// showMessage();
 
-alert( userName );
+// alert( userName );
+
+// let userName = 'xyz';
+
+// function showMessage() {
+//   let userName = "abc"; 
+
+//   let message = 'Hello, ' + userName; 
+//   alert(message);
+// }
+// showMessage();
+
+// alert( userName );
+// function greet(name,thanks){
+//     console.log(`welcome to our webpage ${name} stay home stay safe. ${thanks}!`);
+
+// }
+
+// let name = 'abir';
+// greet(name, 'thanks a lot');
+// const mygreet = function (name, thanks) {
+//     let msg = `welcome to our webpage ${name} stay home stay safe. ${thanks}!`;
+//     return msg;
+
+// }
+
+// let name = 'abir';
+
+// let val = mygreet(name, 'thanks a lot');
+// console.log(val);
+
+// // Functions == Comments
+
+// function showPrimes(n) {
+//     nextPrime: for (let i = 2; i < n; i++) {
+  
+//       for (let j = 2; j < i; j++) {
+//         if (i % j == 0) continue nextPrime;
+//       }
+  
+//       alert( i ); // a prime
+//     }
+//   }
+//   function sayHi() {
+//     alert( "Hello" );
+//   }
+  
+//   alert( sayHi ); 
+
+//   let sayHi = function() {
+//     alert( "Hello" );
+//   };
+  
+//   let func = sayHi;
+
+//   function f() {
+//     // no semicolon needed after function declaration
+//   }
+  
+//   for(;;) {
+//     // no semicolon needed after the loop
+//   }
+//   let userName = prompt("Your name?", "Alice");
+//   let isTeaWanted = confirm("Do you want some tea?");
+  
+//   alert( "Visitor: " + userName ); let userName = prompt("Your name?", "Alice");
+//   let isTeaWanted = confirm("Do you want some tea?");
+  
+//   alert( "Visitor: " + userName ); // Alice
+//   alert( "Tea wanted: " + isTeaWanted );let userName = prompt("Your name?", "Alice");
+//   let isTeaWanted = confirm("Do you want some tea?");
+  
+//   alert( "Visitor: " + userName ); // Alice
+//   alert( "Tea wanted: " + isTeaWanted );
+//   alert( "Tea wanted: " + isTeaWanted );
+
+//   let userName = prompt("Who's there?", '');
+
+// if (userName === 'Admin') {
+
+//   let pass = prompt('Password?', '');
+
+//   if (pass === 'TheMaster') {
+//     alert( 'Welcome!' );
+//   } else if (pass === '' || pass === null) {
+//     alert( 'Canceled' );
+//   } else {
+//     alert( 'Wrong password' );
+//   }
+
+// } else if (userName === '' || userName === null) {
+//   alert( 'Canceled' );
+// } else {
+//   alert( "I don't know you" );
+// }
+
+
+// 26-07-2021 Objects
+
+// let userId = {     // an object
+//     name: "John",  // by key "name" store value "John"
+//     age: 30        // by key "age" store value 30
+//   };
+
+//   let user = {
+//     name: "John"
+//   };
+//   let admin = user;
+
+//   function marry(man, woman) {
+//     woman.husband = man;
+//     man.wife = woman;
+  
+//     return {
+//       father: man,
+//       mother: woman
+//     }
+//   }
+  
+//   let family = marry({
+//     name: "John"
+//   }, {
+//     name: "Ann"
+//   });
+// delete family.father;
+// delete family.mother.husband;
+
+// let user = {
+//     name: "John",
+//     age: 30
+//   };
+  
+//   user.sayHi = function() {
+//     alert("Hello!");
+//   };
+  
+//   user.sayHi();
+// let user = {
+//     // ...
+//   };
+  
+//   // first, declare
+//   function sayHi() {
+//     alert("Hello!");
+//   };
+  
+  // then add as a method
+
+//   user.sayHi = sayHi;
+  
+//   user.sayHi(); // Hello!
+// let user = {
+//   name: "John",
+//   age: 30,
+
+//   sayHi() {
+//     // "this" is the "current object"
+//     alert(this.name);
+//   }
+
+// };
+
+// user.sayHi()
+
+// let user = {
+//     name: "John",
+//     age: 30,
+  
+//     sayHi() {
+//       // "this" is the "current object"
+//       alert(this.name);
+//     }
+  
+//   };
+  
+//   user.sayHi()
+
+// let user = {
+//     name: "John",
+//     age: 30,
+  
+//     sayHi() {
+//       alert(user.name); // "user" instead of "this"
+//     }
+  
+//   };
+
+// let user = {
+//     name: "John",
+//     age: 30,
+  
+//     sayHi() {
+//       alert( user.name ); // leads to an error
+//     }
+  
+//   };
+  
+  
+//   let admin = user;
+//   user = null; // overwrite to make things obvious
+  
+//   admin.sayHi();
+
+// let user = {
+//     firstName: "Ilya",
+//     sayHi() {
+//       let arrow = () => alert(this.firstName);
+//       arrow();
+//     }
+//   };
+  
+//   user.sayHi();
+
+function User(name) {
+    this.name = name;
+    this.isAdmin = false;
+  }
+  
+  let user = new User("Jack");
+  
+  alert(user.name); // Jack
+  alert(user.isAdmin); // false
+
+  
+
+  
