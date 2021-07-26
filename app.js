@@ -326,16 +326,96 @@
   
 //   user.sayHi();
 
-function User(name) {
-    this.name = name;
-    this.isAdmin = false;
+// function User(name) {
+//     this.name = name;
+//     this.isAdmin = false;
+//   }
+  
+//   let user = new User("Jack");
+  
+//   alert(user.name); // Jack
+//   alert(user.isAdmin); // false
+
+  const person = {
+      name: "abir",
+      age: 26,
+      vehicle: {
+        year:2021,
+          drive() {
+              return "I am driving!";
+          },
+          warranty: {
+            expiryDate: 2099
+          }
+      }
   }
-  
-  let user = new User("Jack");
-  
-  alert(user.name); // Jack
-  alert(user.isAdmin); // false
+  const vehicleyear = person.vehicle?.year ?? 1970;
+  const warrantyExpiryDate = person.vehicle?.warranty?.expiryDate;
 
-  
+//   console.log(person.vehicle?.drive?.());
+console.log(vehicleyear);
 
+let userAdmin = {
+    admin() {
+      alert("I am admin");
+    }
+  };
+  
+  let userGuest = {};
+  
+  userAdmin.admin?.(); // I am admin
+  
+  userGuest.admin?.(); // nothing (no such method)
+  let key = "firstName";
+
+let user1 = {
+  firstName: "John"
+};
+
+let user2 = null;
+
+alert( user1?.[key] ); // John
+alert( user2?.[key] ); // undefined
+
+let user = { // belongs to another code
+    name: "John"
+  };
+  
+  let id = Symbol("id");
+  
+  user[id] = 1;
+  
+  alert( user[id] );
+  
+  let id = Symbol("id");
+
+let user = {
+  name: "John",
+  [id]: 123 // not "id": 123
+};
+
+let id = Symbol("id");
+let user = {
+  [id]: 123
+};
+
+let clone = Object.assign({}, user);
+
+alert( clone[id] );
+
+let id = Symbol.for("id"); // if the symbol did not exist, it is created
+
+// read it again (maybe from another part of the code)
+let idAgain = Symbol.for("id");
+
+// the same symbol
+alert( id === idAgain );
+
+// get symbol by name
+let sym = Symbol.for("name");
+let sym2 = Symbol.for("id");
+
+// get name by symbol
+alert( Symbol.keyFor(sym) ); // name
+alert( Symbol.keyFor(sym2) )
   
